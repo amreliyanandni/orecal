@@ -1,0 +1,120 @@
+assigmnet  6
+
+
+1.desc emp;
+
+2.select sysdate from emp;
+
+3.select count(yourname)from emp;
+
+4.select sum(ANNSAL)from emp; 
+
+5.select count(job)from emp where job='manegar';
+
+
+6.select count(deptno) from  emp;
+
+7.select avg( ANNSAL  ) from  emp;
+
+8.select count(deptno)from emp where deptno='10'
+
+9.select min(ANNSAL),max(ANNSAL) from emp;
+
+
+10select round(to_date('2-apr-81'),'year')from emp;
+
+11.select next_day('12-mar-98','friday')from emp;
+
+12.select last_day(hiredate) from emp;
+
+13.select emp.ename,salGrade.grade from emp,salGrade;
+
+14.select ename from emp where hiredate='3-dec-81';
+
+15.select hiredate from emp where hiredate between '30-mar-81' and '1-jun-81';
+
+16.select sal,sal*12,sal/100*5 as incom_tax from emp;
+
+
+17.select ename || 'work in department' || dept.dname || 'and appointed on
+'|| hiredate from emp,dept;
+
+
+18.
+
+19.select count(hiredate) from emp where hiredate='22-mar-81';
+
+20.select ename from emp where hiredate='17-dec-80';
+
+
+21.
+
+22.select ename,hiredate from emp where hiredate between'23-jan-82'and'17-dec-80';
+
+23.select *from emp where ename like'l%';
+select *from emp where ename like'x%';
+
+
+24.
+
+25.
+
+26.
+
+27.btitle'emp' left on
+
+
+28.btitle'table emp' center on
+
+29. btitle'table emp' right on
+
+30.
+
+et 4
+
+
+
+1.select min(hiredate) from emp;
+
+2.select max(hiredate) from emp;
+
+3.select ename,deptno from emp where deptno<20;
+
+4.select sal from emp where comm<sal;
+
+5. select sal from emp where comm>sal;
+
+6. select sal from emp where sal between 500 and 1500;
+
+7.select ename from emp where  mgr in(7902,7566,7788);
+
+8.select mgr from emp where mgr between 7788 and 7092;
+
+9.select *from emp where ename like's%';
+
+10.select ename from emp group by ename having ename='scott';
+
+11.select substr(ename ,1,5) as ename from emp where job='manager';
+
+12. select *from emp where  not job='manegar';
+
+13.select ename,job from emp where not ename like'a%';
+
+14. select mgr from emp where mgr not in(300,500,1400);
+
+15.select ename from emp where job='manegar'  or job='clerk' and deptno=10;
+
+16.select ename,job from emp where job='salesmen' or job='manegar' and sal>1500;
+
+17. select avg(sal) from emp;
+
+18.select avg(sal) from emp where job not in('manager');
+
+
+19.select avg(sal) from  emp group by job;
+
+
+20.select avg(sal) from emp group by deptno;
+
+21.select sum(sal),avg(sal) from emp where job not in('salsmale','clerk','
+manager');

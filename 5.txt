@@ -1,0 +1,107 @@
+assgmnet 5S
+
+
+1.select abs(-18) from emp;
+
+2.select abs(-30) from emp;
+
+3. select ceil(22.5) from emp;
+
+4.select ceil(31.2) from emp;
+
+5.select floor(37.2) from emp;
+
+6. select lower('HASTI')  from emp;
+
+7.with
+     h as (
+        select * from (select level l from dual connect by level <= &&height)
+      )
+    select
+      decode(
+        rownum,
+        1, rpad('*', (&&height*2), '*'),
+        &&height, rpad('*', (&&height*2), '*'),
+       rpad('*', (&&height*2)-1)||'*'
+    ) as square
+   from
+     h
+   ;
+
+
+8.select substr('enams',1,2) from emp;
+
+9.select hiredate from emp;
+
+10.select soundex('ename')from emp;
+
+11.select soundex('ename')from emp where ename='allen';
+
+
+12.select min(sal) from emp;
+
+13. select max(sal) from emp;
+
+14. select length('ename')from emp;
+
+15.select length('job')from emp;
+
+16. select vsize('ename')from emp;
+
+17.select chr(2000)from emp;
+
+18.select rowid,ename from emp;
+
+19.SELECT * FROM ALL_USERS;
+
+20.select *from all_users;
+select *from dba_users;
+
+21. select vsize(ename) from emp where deptno='10';
+
+22.select sum(sal) from emp;
+
+23.select emp.ename,emp.empno,salGrade.grade from emp,salGrade;
+
+24.select dname from dept where loc in('newyork');
+
+25. select ename from emp where job in('accounting');
+
+26.select (sal)*5 *52 + comm from emp;
+
+27.select (sal)*5 *52 + comm from emp;
+
+28.select emp.ename ,dept.dname from emp,dept where dname='sales' ;
+
+29.select emp.ename,dept.loc,dept.dname from emp,dept where dname='accounting' and loc='newyork';
+
+30.select dname from dept where loc in('chicago');
+
+31.select job from emp where ename in('scott');
+
+
+
+32.select job from emp where ename in('blake');
+
+
+33.select ename,sal from emp where sal>2975;
+
+
+34.select ename from emp where not deptno in(30);
+
+
+35.select deptno from emp where deptno=10 union
+     select deptno from emp where deptno=30;
+
+36.select deptno from emp where deptno=10 intersect
+        select deptno from emp where deptno=30;
+
+37.select deptno from emp where deptno=10 minus
+        select deptno from emp where deptno=30;
+
+38.select min(sal)from emp;
+
+39.select ename from emp where job=(select job from emp where ename='blake');
+
+40.elect min(sal) from emp group by job;
+

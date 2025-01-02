@@ -1,0 +1,272 @@
+
+1) alter table emp8 rename column dname to nandni;
+
+Table altered.
+
+SQL> desc emp8;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ NANDNI                                    NOT NULL VARCHAR2(14)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(15)
+ HIREDATE                                           VARCHAR2(15)
+ SAL                                                NUMBER(7)
+ COMM                                               NUMBER(7)
+ DEPTNO                                    NOT NULL NUMBER(2)
+
+
+2) alter table emp8 rename column sal to salaries;
+
+Table altered.
+
+SQL> desc emp8;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ NANDNI                                    NOT NULL VARCHAR2(14)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(15)
+ HIREDATE                                           VARCHAR2(15)
+ SALARIES                                           NUMBER(7)
+ COMM                                               NUMBER(7)
+ DEPTNO                                    NOT NULL NUMBER(2)
+
+3)  alter table emp8 rename column nandni to employeename ;
+
+Table altered.
+
+SQL> desc emp8;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ EMPNO                                     NOT NULL NUMBER(4)
+ EMPLOYEENAME                              NOT NULL VARCHAR2(14)
+ JOB                                                VARCHAR2(9)
+ MGR                                                NUMBER(15)
+ HIREDATE                                           VARCHAR2(15)
+ SALARIES                                           NUMBER(7)
+ COMM                                               NUMBER(7)
+ DEPTNO                                    NOT NULL NUMBER(2)
+
+4)  update emp8 set sal=sal+100 where job='manager';
+
+3 rows updated.
+
+ select*from emp8 where job='manager';
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7566 jones          manager         7839 02-apr-81             3075
+         0         20
+
+      7698 blake          manager         7839 01-may-81             2950
+         0         30
+
+      7782 clark          manager         7839 09-jun-81             2550
+         0         10
+
+5)  update emp8 set sal=sal+1000-4500;
+
+14 rows updated.
+
+ select*from emp8;
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7369 smith          clerk           7902 17-dec-80            -2700
+         0         20
+
+      7499 allen          salesman        7698 20-feb-81            -1900
+       300         30
+
+      7521 ward           salesman        7698 22-feb-81            -2250
+       500         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7566 jones          manager         7839 02-apr-81             -425
+         0         20
+
+      7654 martin         salesman        7698 28-sep-81            -2250
+      1400         30
+
+      7698 blake          manager         7839 01-may-81             -550
+         0         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7782 clark          manager         7839 09-jun-81             -950
+         0         10
+
+      7788 scott          analyst         7566 19-apr-87             -500
+         0         20
+
+      7839 king           president          0 17-nov-81             1500
+         0         10
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7844 turner         salesman        7698 08-sep-81            -2000
+         0         30
+
+      7876 adams          clerk           7788 23-may-87            -2400
+         0         20
+
+      7900 james          clerk           7698 03-dec-81            -2550
+         0         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7902 ford           analyst         7566 03-dec-81             -500
+         0         20
+
+      7934 miller         clerk           7782 23-jan-82            -2200
+         0         10
+
+
+14 rows selected.
+
+6)  update emp8 set sal=sal+100 where dname ='scott';
+
+1 row updated.
+
+ select*from emp8 where dname ='scott';
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7788 scott          analyst         7566 19-apr-87             -400
+         0         20
+
+7) update emp8 set sal=sal+500-300/100;
+
+14 rows updated.
+
+ select*from emp8;
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7369 smith          clerk           7902 17-dec-80            -2203
+         0         20
+
+      7499 allen          salesman        7698 20-feb-81            -1403
+       300         30
+
+      7521 ward           salesman        7698 22-feb-81            -1753
+       500         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7566 jones          manager         7839 02-apr-81               72
+         0         20
+
+      7654 martin         salesman        7698 28-sep-81            -1753
+      1400         30
+
+      7698 blake          manager         7839 01-may-81              -53
+         0         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7782 clark          manager         7839 09-jun-81             -453
+         0         10
+
+      7788 scott          analyst         7566 19-apr-87               97
+         0         20
+
+      7839 king           president          0 17-nov-81             1997
+         0         10
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7844 turner         salesman        7698 08-sep-81            -1503
+         0         30
+
+      7876 adams          clerk           7788 23-may-87            -1903
+         0         20
+
+      7900 james          clerk           7698 03-dec-81            -2053
+         0         30
+
+
+     EMPNO DNAME          JOB              MGR HIREDATE               SAL
+---------- -------------- --------- ---------- --------------- ----------
+      COMM     DEPTNO
+---------- ----------
+      7902 ford           analyst         7566 03-dec-81               -3
+         0         20
+
+      7934 miller         clerk           7782 23-jan-82            -1703
+         0         10
+
+
+14 rows selected.
+
+8) select  empno,dname,sal*0.05 from emp8;
+
+     EMPNO DNAME            SAL*0.05
+---------- -------------- ----------
+      7369 smith             -110.15
+      7499 allen              -70.15
+      7521 ward               -87.65
+      7566 jones                 3.6
+      7654 martin             -87.65
+      7698 blake               -2.65
+      7782 clark              -22.65
+      7788 scott                4.85
+      7839 king                99.85
+      7844 turner             -75.15
+      7876 adams              -95.15
+
+     EMPNO DNAME            SAL*0.05
+---------- -------------- ----------
+      7900 james             -102.65
+      7902 ford                 -.15
+      7934 miller             -85.15
+
+14 rows selected.
+
+9)  select  empno,dname,sal*0.08 from emp8 where job ='salesman';
+
+     EMPNO DNAME            SAL*0.08
+---------- -------------- ----------
+      7499 allen             -112.24
+      7521 ward              -140.24
+      7654 martin            -140.24
+      7844 turner            -120.24
+
+10)  select empno,dname,sal*2 from emp8 where job='manager';
+
+     EMPNO DNAME               SAL*2
+---------- -------------- ----------
+      7566 jones                 144
+      7698 blake                -106
+      7782 clark                -906
